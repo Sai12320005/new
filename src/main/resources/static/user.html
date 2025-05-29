@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Dashboard - Franqlin Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="top-nav">
+        <div class="container d-flex">
+            <p>Order Online Or Call Us: 7416466468</p>
+            <ul class="d-flex">
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <nav class="main-nav">
+        <div class="container nav-content">
+            <h1 id="welcomeMessage">Welcome, User!</h1>
+            
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search for products...">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+            
+            <div class="nav-icons">
+                <div class="nav-icon" id="addressBtn">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="nav-icon" id="cartBtn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="category-grid">
+            <div class="category-card">
+                <img src="https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg" alt="Electronics" class="category-image">
+                <div class="category-name">Electronics</div>
+            </div>
+            <div class="category-card">
+                <img src="https://images.pexels.com/photos/934070/pexels-photo-934070.jpeg" alt="Fashion" class="category-image">
+                <div class="category-name">Fashion</div>
+            </div>
+            <div class="category-card">
+                <img src="https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg" alt="Home & Living" class="category-image">
+                <div class="category-name">Home & Living</div>
+            </div>
+            <div class="category-card">
+                <img src="https://images.pexels.com/photos/996329/pexels-photo-996329.jpeg" alt="Books" class="category-image">
+                <div class="category-name">Books</div>
+            </div>
+        </section>
+
+        <section id="productResults" class="product-grid" style="display: none;">
+            <!-- Products will be dynamically added here -->
+        </section>
+    </main>
+
+    <!-- Address Modal -->
+    <div id="addressModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>My Addresses</h2>
+            <div id="addressList"></div>
+            <button class="btn btn-primary" id="addAddressBtn">Add New Address</button>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Shopping Cart</h2>
+            <div id="cartItems"></div>
+            <div id="cartTotal"></div>
+            <button class="btn btn-primary" id="checkoutBtn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <script src="scripts/user.js"></script>
+</body>
+</html>
