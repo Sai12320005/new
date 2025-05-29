@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - Franqlin Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<div class="user-dashboard">
+    <header class="dashboard-header">
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search products...">
+            <button id="searchBtn"><i class="fas fa-search"></i></button>
+        </div>
+        <nav class="category-nav">
+            <button class="category-btn active" data-category="all">All</button>
+            <button class="category-btn" data-category="electronics">Electronics</button>
+            <button class="category-btn" data-category="clothing">Clothing</button>
+            <button class="category-btn" data-category="accessories">Accessories</button>
+        </nav>
+        <div class="user-actions">
+            <button id="manageAddressBtn"><i class="fas fa-map-marker-alt"></i> Addresses</button>
+            <div id="cartIcon"><i class="fas fa-shopping-cart"></i> <span id="cartCount">0</span></div>
+        </div>
+    </header>
+
+    <main class="dashboard-main">
+        <div id="productsGrid" class="products-grid"></div>
+
+        <div id="addressContainer" class="modal">
+            <div class="modal-content">
+                <h2>Manage Addresses</h2>
+                <form id="addressForm">
+                    <div class="form-group">
+                        <label for="street">Street</label>
+                        <input type="text" id="street" name="street" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" id="city" name="city" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="state">State</label>
+                        <input type="text" id="state" name="state" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="postalCode">Postal Code</label>
+                        <input type="text" id="postalCode" name="postalCode" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <input type="text" id="country" name="country" required>
+                    </div>
+                    <button type="submit">Save Address</button>
+                </form>
+
+                <div class="addresses-list">
+                    <h3>Your Addresses</h3>
+                    <div id="addressesList"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="productModal" class="modal">
+            <div class="modal-content">
+                <div id="productDetails"></div>
+                <div class="reviews-section">
+                    <h3>Reviews</h3>
+                    <div id="reviewsList"></div>
+                    <form id="reviewForm">
+                        <div class="rating-input">
+                            <label>Your Rating:</label>
+                            <div class="stars">
+                                <i class="far fa-star" data-rating="1"></i>
+                                <i class="far fa-star" data-rating="2"></i>
+                                <i class="far fa-star" data-rating="3"></i>
+                                <i class="far fa-star" data-rating="4"></i>
+                                <i class="far fa-star" data-rating="5"></i>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="reviewComment">Your Review</label>
+                            <textarea id="reviewComment" required></textarea>
+                        </div>
+                        <button type="submit">Submit Review</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script src="scripts/user.js"></script>
+</body>
+</html>
